@@ -1,33 +1,24 @@
 export class Drug {
-    private name: string = '';
-    private lab: string = '';
-    private expirationYear: number = 0;
+    private name: string;
+    private lab: string;
+    private expirationYear: number;
 
-    public getName = () => {
-        return this.name;
-    }
-
-    public getLab = () => {
-        return this.lab;
-    }
-
-    public getExpirationYear = () => {
-        return this.expirationYear;
-    }
-
-    public setName = (name: string) => {
+    constructor(
+        name: string,
+        lab: string,
+        expirationYear: number,
+    ) {
         this.name = name;
-    }
-
-    public setLab = (lab: string) => {
-        return this.lab;
-    }
-
-    public setExpirationYear = (expirationYear: number) => {
+        this.lab = lab;
         this.expirationYear = expirationYear
     }
 
-
+    public isExpired = () => {
+        const currentYear = new Date().getUTCFullYear()
+        if ( this.expirationYear < currentYear ) {
+            return true
+        }
+}
 
 
 }

@@ -9,8 +9,7 @@ export class SendExpirationNotificationDrugUseCase {
     }
 
     public execute() {
-        const currentYear = new Date().getUTCFullYear()
-        if ( this.drug.getExpirationYear() < currentYear ) {
+        if ( this.drug.isExpired() ) {
             console.log( 'Send notify!!' );
         }
     }
