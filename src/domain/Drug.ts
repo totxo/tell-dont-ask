@@ -1,16 +1,10 @@
 export class Drug {
-    private name: string;
-    private lab: string;
-    private expirationYear: number;
 
     constructor(
-        name: string,
-        lab: string,
-        expirationYear: number,
+        private readonly name: string,
+        private readonly lab: string,
+        private readonly expirationYear: number,
     ) {
-        this.name = name;
-        this.lab = lab;
-        this.expirationYear = expirationYear
     }
 
     public isExpired = () => {
